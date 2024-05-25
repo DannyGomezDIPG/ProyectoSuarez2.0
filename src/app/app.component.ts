@@ -1,5 +1,5 @@
-import { Component, NgModule } from '@angular/core';
-import { Router, Routes } from '@angular/router';
+import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +7,10 @@ import { Router, Routes } from '@angular/router';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(private router: Router) {}
 
-  irANuevaPagina() {
-    this.router.navigate(['/nueva-pagina']);
+  constructor(private navCtrl: NavController) {}
+
+  goToNuevaPagina() {
+    this.navCtrl.navigateForward('/nueva-pagina');
   }
-
 }
