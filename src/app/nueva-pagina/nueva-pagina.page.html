@@ -1,4 +1,77 @@
-<p>
-  Hola 
-  </p>
-  
+<ion-content>
+  <div class="row">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <div class="col-2">
+          <button  mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon >menu</mat-icon>
+          </button>
+        </div>
+          <p class="col-8 text-wrap text-center mt-3">Congreso de Tecnologías de la Información</p>
+          <img
+            class="col-2"
+            src="https://leon.tecnm.mx/wp-content/uploads/2020/12/itl_leon.png"
+            alt="Logo_ITL"
+            width="50"
+            height="30"
+          />
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </div>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/inicio">INICIO</a>
+        <a mat-list-item routerLink="/participantes">PARTICIPANTES</a>
+        <a mat-list-item routerLink="/agregar-registro">REGISTRO</a>
+        <a mat-list-item routerLink="/conferencias">CONFERENCIAS</a>
+      </mat-nav-list>
+    </mat-sidenav>
+      
+      <mat-sidenav-content>
+        <div class="content">
+          <div class="row">
+            <div class="col mx-auto">
+              <h2 class="text-center mt-5 mb-5">
+                Bienvenido al Congreso de Tecnologías de la Información.
+              </h2>
+            </div>
+          </div>
+          
+          <div class="row px-2 py-3">      
+            <div class="col-12">
+              <div class="row px-2 py-3">
+                <div class="col mx-auto">
+                  <h3 class="text-center mb-3">
+                    El evento académico que reúne anualmente a los Docentes Apasionados por las TIC en el Aula de Clase de
+                    Colombia.
+                  </h3>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="fb-page" data-href="https://www.facebook.com/NuestrasTIC/" data-tabs="timeline" data-width=""
+                  data-height="" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false"
+                  data-show-facepile="false">
+                  <blockquote cite="https://www.facebook.com/NuestrasTIC/" class="fb-xfbml-parse-ignore"><a
+                      href="https://www.facebook.com/NuestrasTIC/">Congreso Nacional Nuestras TIC</a></blockquote>
+                </div>
+              </div>
+
+              <div class="row px-2 py-3 text-center">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                  <img src="../img/1.jpg" class="w-75 rounded-5" />
+                </div>
+              </div>
+              <div class="row px-2 py-3">
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                  <img src="../img/2.jpg" class="w-75 rounded-5" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>  
+</ion-content>

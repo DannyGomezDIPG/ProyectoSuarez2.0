@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-nueva-pagina',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nueva-pagina.page.scss'],
 })
 export class NuevaPaginaPage implements OnInit {
-
-  constructor() { }
+  
+  @ViewChild('sidenav') sidenav!: MatSidenav;
+  
+  constructor(
+  ) { }
 
   ngOnInit() {
   }

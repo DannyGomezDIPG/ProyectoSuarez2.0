@@ -1,0 +1,64 @@
+<ion-content>
+    <div class="row">
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <div class="col-2">
+            <button  mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon >menu</mat-icon>
+            </button>
+          </div>
+            <p class="col-8 text-wrap text-center mt-3">Congreso de Tecnologías de la Información</p>
+            <img
+              class="col-2"
+              src="https://leon.tecnm.mx/wp-content/uploads/2020/12/itl_leon.png"
+              alt="Logo_ITL"
+              width="50"
+              height="30"
+            />
+          </mat-toolbar-row>
+        </mat-toolbar>
+      </div>
+  
+    <mat-sidenav-container>
+      <mat-sidenav #sidenav mode="side">
+        <mat-nav-list>
+          <a mat-list-item routerLink="/inicio">INICIO</a>
+          <a mat-list-item routerLink="/participantes">PARTICIPANTES</a>
+          <a mat-list-item routerLink="/agregar-registro">REGISTRO</a>
+          <a mat-list-item routerLink="/conferencias">CONFERENCIAS</a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div class="row">
+            <div class="col mx-auto">
+                <h2 class="text-center mt-4 mb-5">
+                    Programa de conferencias.
+                </h2>
+            </div>
+        </div>
+        <br />s
+        <div class="row border border-secondary rounded-4 px-2 py-3">
+            <table class="table table-striped" id="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Conferencia</th>
+                        <th scope="col">Conferencista</th>
+                        <th scope="col">Registro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let conferencia of conferencias; index as i">
+                        <th scope="row">{{ i + 1 }}</th>
+                        <td>{{ conferencia.horario }}</td>
+                        <td><a [href]="'asistentes.html?id=' + conferencia.idConference + '&nombre=' + conferencia.nombre">{{ conferencia.nombre }}</a></td>
+                        <td>{{ conferencia.conferencista }}</td>
+                        <td><a [href]="'registroconferencia.html?id=' + conferencia.idConference"><button class="form-control btn btn-danger border-2 border-black">Registrarse</button></a></td>
+                      </tr>
+                </tbody>
+            </table>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+</ion-content>
